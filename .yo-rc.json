@@ -1,0 +1,38 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.amp.acmefees"
+    },
+    "jhipsterVersion": "6.6.0",
+    "applicationType": "microservice",
+    "baseName": "AcmeFees",
+    "packageName": "com.amp.acmefees",
+    "packageFolder": "com/amp/acmefees",
+    "serverPort": "8083",
+    "authenticationType": "jwt",
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": false,
+    "websocket": false,
+    "databaseType": "mongodb",
+    "devDatabaseType": "mongodb",
+    "prodDatabaseType": "mongodb",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "gradle",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "MmRiOTQ4OWExYmJhNWM4NWU1ZGVlOGZjZTQ4MDlhNmRiMmNlZDhjOGY0ZjViNTMxNzU3ZDAzNTkyMzE4MmZmN2NjNGFhZDY2NzBiNmI2MDIzNmNlOTYzYjlmZTJkNGJkZWMzOTdjY2JhMTJhMzFlNjBiNTI4NTNkOTQ5ZTg2NjI=",
+    "embeddableLaunchScript": false,
+    "creationTimestamp": 1579954517922,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": false,
+    "clientPackageManager": "npm",
+    "blueprints": [],
+    "skipClient": true,
+    "skipUserManagement": true
+  }
+}

@@ -1,0 +1,8 @@
+version: '2'
+services:
+  acmefees-mongodb:
+    image: mongo:4.0.13
+    ports:
+      - '27018:27017'
+    volumes:
+      - /data/db:/data/db
