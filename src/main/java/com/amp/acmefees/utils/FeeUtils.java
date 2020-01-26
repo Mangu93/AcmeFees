@@ -17,15 +17,15 @@ public class FeeUtils {
         for (Map.Entry<String, JsonElement> entry : entries) {
             String key = entry.getKey();
             JsonArray jsonArray = entry.getValue().getAsJsonArray();
-            List<String> fees = new ArrayList<>();
             jsonArray.forEach(jsonElement1 -> {
+                List<String> fees = new ArrayList<>();
                 String limLow = ((JsonArray) jsonElement1).get(0).getAsString();
                 String limTop = ((JsonArray) jsonElement1).get(1).getAsString();
                 String fee = ((JsonArray) jsonElement1).get(2).getAsString();
                 fees.add(limLow);
                 fees.add(limTop);
                 fees.add(fee);
-                mongoTemplate.insert(new Fee(key, fees));
+                mongoTemplate.save(new Fee(key, fees));
             });
         }
         return entries;
