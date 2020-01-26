@@ -12,8 +12,8 @@ public class Fee {
     @Id
     private CompositeKey id;
 
-    public Fee(String category, List<String> fees) {
-        this.id = new CompositeKey(category, fees);
+    public Fee(CompositeKey id) {
+        this.id = id;
     }
 
     public CompositeKey getId() {
@@ -37,7 +37,7 @@ public class Fee {
         return Objects.hash(id);
     }
 
-    static class CompositeKey implements Serializable {
+    public static class CompositeKey implements Serializable {
         private String category;
 
         private List<String> fees;

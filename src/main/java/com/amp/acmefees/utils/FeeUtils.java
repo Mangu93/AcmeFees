@@ -25,7 +25,8 @@ public class FeeUtils {
                 fees.add(limLow);
                 fees.add(limTop);
                 fees.add(fee);
-                mongoTemplate.save(new Fee(key, fees));
+                //Have to save them like this
+                mongoTemplate.save(new Fee(new Fee.CompositeKey(key, fees)));
             });
         }
         return entries;

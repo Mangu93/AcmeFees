@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import static com.amp.acmefees.utils.FeeUtils.insertEntries;
 
@@ -44,8 +45,9 @@ public class ReaderResource {
     public ResponseEntity<Object> readAllFees() {
         Query query = new Query();
         List<Fee> feeList = mongoTemplate.find(query, Fee.class);
+        List<Fee.CompositeKey> keyList = feeList.stream().map(Fee::getId).collect(Collectors.toList());
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        return new ResponseEntity<>(gson.toJson(feeList), HttpStatus.OK);
+        return new ResponseEntity<>(gson.toJson(keyList), HttpStatus.OK);
     }
 
     @GetMapping("/fees/{category}")
